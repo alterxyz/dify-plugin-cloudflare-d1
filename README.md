@@ -72,6 +72,9 @@ The connector provides detailed error information when queries fail:
 - [Cloudflare API Documentation](https://developers.cloudflare.com/api/)
 - [SQLite Documentation](https://www.sqlite.org/docs.html)
 
-## License
+## TODO
 
-This connector is provided under the [MIT License](LICENSE).
+- [ ] Test in Agent mode to see if description good enough for llm
+- [ ] Finish the external conversation storage and agent memory support
+- [ ] Use build-in storage to store something - maybe error info, maybe something else
+- [ ] Move next

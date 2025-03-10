@@ -71,7 +71,3 @@ The connector provides detailed error information when queries fail:
 - [Cloudflare D1 Documentation](https://developers.cloudflare.com/d1/)
 - [Cloudflare API Documentation](https://developers.cloudflare.com/api/)
 - [SQLite Documentation](https://www.sqlite.org/docs.html)
-
-## License
-
-This connector is provided under the [MIT License](LICENSE).

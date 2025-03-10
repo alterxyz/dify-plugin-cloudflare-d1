@@ -34,7 +34,7 @@ class QueryAdvanced(Tool):
             error_message = f"Cloudflare D1 Query Error: {result['error']}. "
             if "metadata" in result:
                 metadata = result["metadata"]
-                error_message += f"Details: "
+                error_message += "Details: "
                 if "http_status" in metadata:
                     error_message += f"HTTP Status: {metadata['http_status']}, "
                 if "detail" in metadata:

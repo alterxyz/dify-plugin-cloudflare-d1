@@ -1,6 +1,5 @@
-from typing import Any, Dict, List
 from collections.abc import Generator
-from typing import Any
+from typing import Any, Dict, List
 
 import httpx
 import json
@@ -11,21 +10,13 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 
 class DataConnectorCloudflareD1Tool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
-        try:
-            account_id = tool_parameters["account_id"]
-        except KeyError:
-            account_id = self.runtime.credentials["cloudflare_account_id"]
-        database_id = tool_parameters["database_id"]
+        account_id = self.runtime.credentials["cloudflare_account_id"]
         api_token = self.runtime.credentials["cloudflare_api_token"]
-
+        database_id = tool_parameters["database_id"]
         sql_query = tool_parameters["query"]
-        try:
-            params = tool_parameters["params"]
-        except KeyError:
-            params = []
 
         result = query_cloudflare_d1(
-            account_id, database_id, api_token, sql_query, params
+            account_id, database_id, api_token, sql_query, []
         )
         yield self.create_json_message(result)
 

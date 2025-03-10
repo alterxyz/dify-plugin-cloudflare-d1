@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 author: alterxyz
 name: data_connector_cloudflare_d1

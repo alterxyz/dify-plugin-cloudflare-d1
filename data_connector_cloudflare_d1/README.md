@@ -46,6 +46,65 @@ For each query, you'll need:
 - **SQL Query**: The query to execute
 - **Parameters** (optional): Values for parameterized queries
 
+## Response Format
+
+The connector has two types of responses:
+
+1. **Success Response**: Returns a JSON object with:
+
+    - `success`: Boolean value true
+    - `metadata`: Complete Cloudflare D1 execution result that may containing:
+        - Query results
+        - Execution metadata
+        - Status information
+
+2. **Error Response**:
+    - Raises an exception start with error type
+    - Includes `metadata` with error information
+    - Stops execution and triggers Dify's error handling
+
+Example Success Response:
+
+```json
+{
+    "success": true,
+    "metadata": {
+        "result": [
+            {
+                "results": [
+                    {
+                        "1": 1
+                    }
+                ],
+                "success": true,
+                "meta": {
+                    "served_by": "v3-prod",
+                    "served_by_region": "APAC",
+                    "served_by_primary": true,
+                    "timings": {
+                        "sql_duration_ms": 0.2211
+                    },
+                    "duration": 0.2211,
+                    "changes": 0,
+                    "last_row_id": 0,
+                    "changed_db": false,
+                    "size_after": 28672,
+                    "rows_read": 0,
+                    "rows_written": 0
+                }
+            }
+        ],
+        "errors": [],
+        "messages": [],
+        "success": true
+    }
+}
+```
+
+```plaintext
+True
+```
+
 ## Error Handling
 
 The connector provides detailed error information when queries fail:
@@ -53,6 +112,8 @@ The connector provides detailed error information when queries fail:
 - **API Errors**: Returns specific Cloudflare API error codes and messages
 - **HTTP Errors**: Returns status codes and error details
 - **Connection Errors**: Provides relevant connection error information
+
+Since it might fail, it is recommended to enable Dify's retry and error handling.
 
 ## Best Practices
 
@@ -63,8 +124,8 @@ The connector provides detailed error information when queries fail:
 ## Limitations
 
 - Follows Cloudflare D1 service limits (see: <https://developers.cloudflare.com/d1/platform/limits/>)
-- Maximum recommended database size: 10GB
 - Connection timeouts may occur for very complex queries
+- Excutes only one query at a time
 
 ## Additional Resources
 

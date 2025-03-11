@@ -44,8 +44,8 @@ credentials_for_provider:
     pt_BR: Obtenha seu ID de conta do Cloudflare
     url: https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/
 tools:
-  - tools/query.yaml
   - tools/cloudflare_verify.yaml
+  - tools/query.yaml
   - tools/query_advanced.yaml
 extra:
   python:

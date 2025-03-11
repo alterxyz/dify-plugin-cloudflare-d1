@@ -1,7 +1,7 @@
 from collections.abc import Generator
 from typing import Any
 
-from cloudflare_d1 import cloudflare_token_verify
+from utils.cloudflare_d1 import cloudflare_token_verify
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage

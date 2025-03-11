@@ -1,7 +1,7 @@
 from typing import Any
 from collections.abc import Generator
 
-from cloudflare_d1 import cloudflare_d1_query
+from utils.cloudflare_d1 import cloudflare_d1_query, cloudflare_d1_result_success
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
@@ -42,7 +42,9 @@ class QueryAdvanced(Tool):
                     error_message += f"Response Payload: {metadata['response_payload']}"
                 if "details" in metadata:  # For cloudflare_d1_error original structure
                     error_message += f"D1 Error Details: {metadata['details']}"
-                if "raw_response" in metadata:  # For cloudflare_d1_error original structure
+                if (
+                    "raw_response" in metadata
+                ):  # For cloudflare_d1_error original structure
                     error_message += f"Raw Response: {metadata['raw_response']}"
 
             # Raise exception if there's an error
@@ -50,3 +52,6 @@ class QueryAdvanced(Tool):
 
         # Only yield message if successful
         yield self.create_json_message(result)
+
+        success = "True" if cloudflare_d1_result_success(result) else "False"
+        yield self.create_text_message(success)

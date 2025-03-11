@@ -3,7 +3,7 @@ identity:
   author: alterxyz
   label:
     en_US: Cloudflare D1 Advanced Query Executor
-    zh_Hans: Cloudflare D1 高级指令执行
+    zh_Hans: Cloudflare D1 指令执行 拓展版
     pt_BR: Executor de Consulta Avançada Cloudflare D1
 description:
   human:

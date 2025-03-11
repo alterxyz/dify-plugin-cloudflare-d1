@@ -3,7 +3,7 @@ identity:
   author: alterxyz
   label:
     en_US: Cloudflare D1 Execution Tool
-    zh_Hans: Cloudflare D1 执行工具
+    zh_Hans: Cloudflare D1 指令执行
     pt_BR: Ferramenta de Execução Cloudflare D1
 description:
   human:
@@ -24,7 +24,7 @@ parameters:
       zh_Hans: Cloudflare D1 数据库 ID。
       pt_BR: ID do banco de dados Cloudflare D1.
     llm_description: Specify the Cloudflare D1 database ID. Important:You MUST obtain this ID from the user if not already available.
-    form: llm
+    form: form
   - name: query
     type: string
     required: true
@@ -33,9 +33,9 @@ parameters:
       zh_Hans: SQL 语句
       pt_BR: Instrução SQL
     human_description:
-      en_US: SQL statement to execute on Cloudflare D1. Standard SQL syntax is supported.
-      zh_Hans: 在 Cloudflare D1 上执行的 SQL 语句。支持标准 SQL 语法。
-      pt_BR: Instrução SQL para executar no Cloudflare D1. A sintaxe SQL padrão é suportada.
+      en_US: SQL statement to execute on Cloudflare D1.
+      zh_Hans: 在 Cloudflare D1 上执行的 SQL 语句。
+      pt_BR: Instrução SQL para executar no Cloudflare D1.
     llm_description: Provide a complete and valid SQL statement for Cloudflare D1 execution. Important:Ensure it is parameter-free (no placeholders like `?`, `:param`, etc.).
     form: llm
 extra:

@@ -1,6 +1,9 @@
-version: 0.0.2
+version: 0.0.3
 type: plugin
 author: alterxyz
+tags:
+  - utilities
+  - productivity
 name: data_connector_cloudflare_d1
 label:
   en_US: Cloudflare D1 Operator

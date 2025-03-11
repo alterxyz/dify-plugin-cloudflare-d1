@@ -3,7 +3,7 @@ identity:
   author: alterxyz
   label:
     en_US: Cloudflare D1 Advanced Query Executor
-    zh_Hans: Cloudflare D1 高级查询执行器
+    zh_Hans: Cloudflare D1 高级指令执行
     pt_BR: Executor de Consulta Avançada Cloudflare D1
 description:
   human:
@@ -24,7 +24,7 @@ parameters:
       zh_Hans: Cloudflare D1 数据库 ID。
       pt_BR: ID do banco de dados Cloudflare D1.
     llm_description: Specify the Cloudflare D1 database ID to query.
-    form: llm
+    form: form
   - name: query
     type: string
     required: true
@@ -63,7 +63,7 @@ parameters:
       zh_Hans: 可选的 Cloudflare 账户 ID，用于 D1 访问。
       pt_BR: ID da conta Cloudflare opcional para acesso ao D1.
     llm_description: Optional Cloudflare account ID. **Note:**  This and `api_token` are primarily for Dify variable support and should be configured by the user in their Dify settings.  If asked to provide these, use default empty string or question the user as incorrect values will prevent execution.
-    form: llm
+    form: form
   - name: api_token
     type: string
     required: false
@@ -76,7 +76,7 @@ parameters:
       zh_Hans: 可选的 Cloudflare API 令牌，用于 D1 访问。
       pt_BR: Token de API Cloudflare opcional para acesso ao D1.
     llm_description: Optional Cloudflare API Token. **Note:** This and `account_id` are primarily for Dify variable support and should be configured by the user in their Dify settings. If asked to provide these, use default empty string or question the user as incorrect values will prevent execution.
-    form: llm
+    form: form
 extra:
   python:
     source: tools/query_advanced.py
